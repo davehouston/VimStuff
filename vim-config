@@ -1,0 +1,28 @@
+set tabstop=3
+set ts=3
+set expandtab
+set ls=2
+set shiftwidth=3
+set number
+set title
+set syntax=1
+set t_Co=256
+colorscheme inkpot
+set autoindent
+set pastetoggle=<f9>
+
+autocmd FileType perl :noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
+
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+set cursorline
+hi CursorLine cterm=NONE ctermbg=235
+
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P\ %{fugitive#statusline()}
+let Tlist_Auto_Open = 1
+
+let g:NERDTreeWinPos = "right"
+let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'

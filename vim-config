@@ -1,3 +1,4 @@
+" Basics
 set tabstop=3
 set ts=3
 set expandtab
@@ -9,19 +10,30 @@ set syntax=1
 set t_Co=256
 colorscheme inkpot
 set autoindent
+
+" Toggle paste mode with F9
 set pastetoggle=<f9>
 
-autocmd FileType perl :noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
-
+" Code Folding
 set foldmethod=syntax
-set foldnestmax=10
-set foldlevel=1
+set foldlevelstart=1
+let perl_fold=1
 
+" Custom cursorline and StatusLine
 set cursorline
 hi CursorLine cterm=NONE ctermbg=235
-
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P\ %{fugitive#statusline()}
 let Tlist_Auto_Open = 1
 
+" NERDTree
 let g:NERDTreeWinPos = "right"
+let NERDTreeIgnore=['\.swp$']
+let NERDTreeChDirMode=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeMinimalUI=1
+" Start NERDTree automatically
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" TagList
 let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'

@@ -13,9 +13,8 @@ set pastetoggle=<f9>
 
 autocmd FileType perl :noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
 
-set foldmethod=indent
+set foldmethod=syntax
 set foldnestmax=10
-set nofoldenable
 set foldlevel=1
 
 set cursorline

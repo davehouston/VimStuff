@@ -29,7 +29,7 @@ let Tlist_Auto_Open = 1
 let g:NERDTreeWinPos = "right"
 let NERDTreeIgnore=['\.swp$']
 let NERDTreeChDirMode=1
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeMinimalUI=1
 " Start NERDTree automatically
 autocmd vimenter * NERDTree

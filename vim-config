@@ -21,7 +21,7 @@ let perl_fold=1
 
 " Custom cursorline and StatusLine
 set cursorline
-hi CursorLine cterm=NONE ctermbg=235
+hi CursorLine cterm=NONE ctermbg=235 guibg=#343434
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P\ %{fugitive#statusline()}
 let Tlist_Auto_Open = 1
 

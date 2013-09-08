@@ -10,6 +10,7 @@ set syntax=1
 set t_Co=256
 colorscheme inkpot
 set autoindent
+set iskeyword+=:
 
 " Toggle paste mode with F9
 set pastetoggle=<f9>
@@ -18,6 +19,9 @@ set pastetoggle=<f9>
 set foldmethod=syntax
 set foldlevelstart=1
 let perl_fold=1
+
+" Enable plugin for perl support
+filetype plugin on
 
 " Custom cursorline and StatusLine
 set cursorline
@@ -37,3 +41,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " TagList
 let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'
+
+" Bracket autocomplete stuff
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i

@@ -1,16 +1,18 @@
 " Bundle stuff
 set nocompatible
+syntax enable
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'qmarik/vundle'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
+source $HOME/.vim/packages.vim
 
+
+
+ 
 
 " Basics
+colorscheme inkpot
 set tabstop=3
 set ts=3
 set expandtab
@@ -18,12 +20,15 @@ set ls=2
 set shiftwidth=3
 set number
 set title
+set ruler
 set t_Co=256
-colorscheme inkpot
 set autoindent
 set iskeyword+=:
-syntax on
 set backspace=2
+set gcr=n:blinkon0   " no blinking cursor
+set mouse=a
+
+
 
 " Toggle paste mode with F9
 set pastetoggle=<f9>

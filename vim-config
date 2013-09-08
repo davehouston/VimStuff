@@ -1,3 +1,15 @@
+" Bundle stuff
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'qmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+
+
 " Basics
 set tabstop=3
 set ts=3
@@ -6,11 +18,12 @@ set ls=2
 set shiftwidth=3
 set number
 set title
-set syntax=1
 set t_Co=256
 colorscheme inkpot
 set autoindent
 set iskeyword+=:
+syntax on
+set backspace=2
 
 " Toggle paste mode with F9
 set pastetoggle=<f9>
@@ -42,7 +55,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " TagList
 let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'
 
-" Bracket autocomplete stuff
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i

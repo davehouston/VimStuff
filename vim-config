@@ -61,15 +61,9 @@ au BufnewFile,BufRead *.tt setlocal ft=tt2
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-<<<<<<< HEAD
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTa
-=======
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " Perl stuff
 au FileType perl nmap <C-F6> :%!perltidy<CR>
 
-" LAN stuff
-set tags=/home/dave/sitio/lan/desarrollo/tags
 
->>>>>>> c1334f2284c96cc64f83040807fea2fc1cf2f10c

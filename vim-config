@@ -26,7 +26,6 @@ set gcr=n:blinkon0   " no blinking cursor
 set mouse=a
 
 
-
 " Toggle paste mode with F9
 set pastetoggle=<f9>
 
@@ -55,7 +54,18 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeMinimalUI=1
 " TagList
 
-let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attribute;s:subroutine;l:label'
-
 " Filetypes
 au BufnewFile,BufRead *.tt setlocal ft=tt2
+
+" Some autocomplete stuff
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+" Perl stuff
+au FileType perl nmap <C-F6> :%!perltidy<CR>
+
+" LAN stuff
+set tags=/home/dave/sitio/lan/desarrollo/tags
+

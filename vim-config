@@ -24,7 +24,7 @@ set iskeyword+=:
 set backspace=2
 set gcr=n:blinkon0   " no blinking cursor
 set mouse=a
-
+set modelines=5
 
 
 " Toggle paste mode with F9
@@ -59,3 +59,9 @@ let tlist_perl_settings='perl;u:use;p:package;r:role;e:extends;c:constant;a:attr
 
 " Filetypes
 au BufnewFile,BufRead *.tt setlocal ft=tt2
+
+" Some autocomplete stuff
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTa

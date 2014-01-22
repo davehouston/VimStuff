@@ -12,7 +12,7 @@ source $HOME/.vim/packages.vim
 colorscheme inkpot
 set tabstop=3
 set ts=3
-set expandtab
+" set expandtab  " Because LAN
 set ls=2
 set shiftwidth=3
 set number
@@ -24,10 +24,23 @@ set iskeyword+=:
 set backspace=2
 set gcr=n:blinkon0   " no blinking cursor
 set mouse=a
+set showcmd
+set wildmenu
+set lazyredraw
+set showmatch
 
+set incsearch
+set hlsearch
+
+if has('mouse_sgr') 
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+endif
 
 " Toggle paste mode with F9
 set pastetoggle=<f9>
+
 
 " Code Folding
 set foldmethod=syntax
@@ -39,6 +52,7 @@ let xml_syntax_folding=1
 
 " Enable plugin for perl support
 filetype plugin on
+filetype indent on
 
 " Custom cursorline and StatusLine
 set cursorline
@@ -52,20 +66,31 @@ let NERDTreeIgnore=['\.swp$']
 let NERDTreeChDirMode=1
 let NERDTreeQuitOnOpen=0
 let NERDTreeMinimalUI=1
-" TagList
+autocmd vimenter * if !argc() | NERDTree | endif
+
 
 " Filetypes
 au BufnewFile,BufRead *.tt setlocal ft=tt2
-
-" Some autocomplete stuff
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " Perl stuff
 au FileType perl nmap <C-F6> :%!perltidy<CR>
 
 " LAN stuff
-set tags=/home/dave/sitio/lan/desarrollo/tags
+"set tags=/home/dave/sitio/lan/desarrollo/tags
+set tags=tags;
 
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F10> :TlistToggle<CR>
+
+" YCM settings
+let g:ycm_complete_in_strings = 0
+let g:ycm_register_as_syntastic_checker = 0
+
+" tmux config
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif

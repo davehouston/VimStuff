@@ -69,7 +69,8 @@ let NERDTreeIgnore=['\.swp$']
 let NERDTreeChDirMode=1
 let NERDTreeQuitOnOpen=0
 let NERDTreeMinimalUI=1
-autocmd vimenter * if !argc() | NERDTree | endif
+let g:nerdtree_tabs_open_on_console_startup = 1
+" autocmd vimenter * if !argc() | NERDTree | endif
 
 
 " Filetypes
@@ -80,7 +81,7 @@ au FileType perl nmap <C-F6> :%!perltidy<CR>
 
 set tags=tags;
 
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F10> :TlistToggle<CR>
 
 " YCM settings
@@ -97,3 +98,28 @@ else
 endif
 
 set backupdir=/tmp
+
+if has("cscope")
+      set csprg=/usr/local/bin/cscope
+      set csto=0
+      set cst
+      set nocsverb
+      " add any database in current directory
+      if filereadable("cscope.out")
+          cs add cscope.out
+      " else add database pointed to by environment
+      elseif $CSCOPE_DB != ""
+          cs add $CSCOPE_DB
+      endif
+      set csverb
+   endif
+
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+

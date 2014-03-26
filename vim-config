@@ -12,7 +12,7 @@ source $HOME/.vim/packages.vim
 colorscheme inkpot
 set tabstop=3
 set ts=3
-set expandtab
+set expandtab  " Because LAN
 set ls=2
 set shiftwidth=3
 set number
@@ -24,10 +24,25 @@ set iskeyword+=:
 set backspace=2
 set gcr=n:blinkon0   " no blinking cursor
 set mouse=a
-set modelines=5
+set showcmd
+set wildmenu
+set lazyredraw
+set showmatch
+set incsearch
+set hlsearch
+
+" disable background color erasure
+set t_ut=
+
+if has('mouse_sgr') 
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+endif
 
 " Toggle paste mode with F9
 set pastetoggle=<f9>
+
 
 " Code Folding
 set foldmethod=syntax
@@ -39,6 +54,8 @@ let xml_syntax_folding=1
 
 " Enable plugin for perl support
 filetype plugin on
+filetype indent on
+
 
 " Custom cursorline and StatusLine
 set cursorline
@@ -52,24 +69,57 @@ let NERDTreeIgnore=['\.swp$']
 let NERDTreeChDirMode=1
 let NERDTreeQuitOnOpen=0
 let NERDTreeMinimalUI=1
-" TagList
+let g:nerdtree_tabs_open_on_console_startup = 1
+" autocmd vimenter * if !argc() | NERDTree | endif
+
 
 " Filetypes
 au BufnewFile,BufRead *.tt setlocal ft=tt2
 
-" Some autocomplete stuff
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-<<<<<<< HEAD
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTa
-=======
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-
 " Perl stuff
 au FileType perl nmap <C-F6> :%!perltidy<CR>
 
-" LAN stuff
-set tags=/home/dave/sitio/lan/desarrollo/tags
+set tags=tags;
 
->>>>>>> c1334f2284c96cc64f83040807fea2fc1cf2f10c
+nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
+nnoremap <silent> <F10> :TlistToggle<CR>
+
+" YCM settings
+let g:ycm_complete_in_strings = 0
+let g:ycm_register_as_syntastic_checker = 0
+
+" tmux config
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+set backupdir=/tmp
+
+if has("cscope")
+      set csprg=/usr/local/bin/cscope
+      set csto=0
+      set cst
+      set nocsverb
+      " add any database in current directory
+      if filereadable("cscope.out")
+          cs add cscope.out
+      " else add database pointed to by environment
+      elseif $CSCOPE_DB != ""
+          cs add $CSCOPE_DB
+      endif
+      set csverb
+   endif
+
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+

@@ -2,33 +2,31 @@
 set nocompatible
 syntax enable
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
 
-source $HOME/.vim/packages.vim
-
+source ~/.vim/neobundle.vim
 
 " Basics
 colorscheme inkpot
-set tabstop=3
-set ts=3
-set expandtab  " Because LAN
-set ls=2
-set shiftwidth=3
-set number
-set title
-set ruler
-set t_Co=256
-set autoindent
-set iskeyword+=:
-set backspace=2
-set gcr=n:blinkon0   " no blinking cursor
-set mouse=a
-set showcmd
-set wildmenu
-set lazyredraw
-set showmatch
-set incsearch
+set tabstop=3       " 3 spaces for tabs
+set ts=3            " see above.
+set shiftwidth=3    " spaces used for auto indent
+set expandtab       " Make them spaces
+set ls=2            " Always show a status line
+set number          " Line numbers
+set title           " Set terminal window title
+set ruler           " show line & col numbers.
+set t_Co=256        " enable 256 colors
+set autoindent      " enable auto indentation
+set smartindent     " smart indentation
+" set iskeyword+=:
+set backspace=2     " set backspace=indent,eol,start
+set gcr=n:blinkon0  " no blinking cursor
+set mouse=a         " Mouse support
+set showcmd         " Show command chars
+set wildmenu        " Use tab to complete commands
+set lazyredraw      " Speed up slow connections; prevent redraws when not needed
+set showmatch       " Show matched parens, etc.
+set incsearch       " Highlight searched text matches
 set hlsearch
 
 " disable background color erasure
@@ -100,7 +98,7 @@ endif
 set backupdir=/tmp
 
 if has("cscope")
-      set csprg=/usr/local/bin/cscope
+      set csprg=/usr/bin/cscope
       set csto=0
       set cst
       set nocsverb

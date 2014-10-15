@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/dave/projects/Sugars/lib/Sugars/Schema/Result'
-let g:netrw_dirhist_2='/home/dave/.vim/plugin'
-let g:netrw_dirhist_3='/home/dave/.mutt'
-let g:netrw_dirhist_4='/home/dave/.conky'
-let g:netrw_dirhist_5='/home/dave/.vim'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/dave'

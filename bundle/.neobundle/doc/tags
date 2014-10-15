@@ -1,9 +1,9 @@
-'NERDChristmasTree'	NERD_tree.txt	/*'NERDChristmasTree'*
 'NERDTreeAutoCenter'	NERD_tree.txt	/*'NERDTreeAutoCenter'*
 'NERDTreeAutoCenterThreshold'	NERD_tree.txt	/*'NERDTreeAutoCenterThreshold'*
 'NERDTreeAutoDeleteBuffer'	NERD_tree.txt	/*'NERDTreeAutoDeleteBuffer'*
 'NERDTreeBookmarksFile'	NERD_tree.txt	/*'NERDTreeBookmarksFile'*
-'NERDTreeCasadeOpenSingleChildDir'	NERD_tree.txt	/*'NERDTreeCasadeOpenSingleChildDir'*
+'NERDTreeBookmarksSort'	NERD_tree.txt	/*'NERDTreeBookmarksSort'*
+'NERDTreeCascadeOpenSingleChildDir'	NERD_tree.txt	/*'NERDTreeCascadeOpenSingleChildDir'*
 'NERDTreeCaseSensitiveSort'	NERD_tree.txt	/*'NERDTreeCaseSensitiveSort'*
 'NERDTreeChDirMode'	NERD_tree.txt	/*'NERDTreeChDirMode'*
 'NERDTreeDirArrows'	NERD_tree.txt	/*'NERDTreeDirArrows'*
@@ -13,6 +13,7 @@
 'NERDTreeMinimalUI'	NERD_tree.txt	/*'NERDTreeMinimalUI'*
 'NERDTreeMouseMode'	NERD_tree.txt	/*'NERDTreeMouseMode'*
 'NERDTreeQuitOnOpen'	NERD_tree.txt	/*'NERDTreeQuitOnOpen'*
+'NERDTreeRespectWildIgnore'	NERD_tree.txt	/*'NERDTreeRespectWildIgnore'*
 'NERDTreeShowBookmarks'	NERD_tree.txt	/*'NERDTreeShowBookmarks'*
 'NERDTreeShowFiles'	NERD_tree.txt	/*'NERDTreeShowFiles'*
 'NERDTreeShowHidden'	NERD_tree.txt	/*'NERDTreeShowHidden'*
@@ -315,6 +316,7 @@ fugitive-:Gcommit	fugitive.txt	/*fugitive-:Gcommit*
 fugitive-:Gdiff	fugitive.txt	/*fugitive-:Gdiff*
 fugitive-:Ge	fugitive.txt	/*fugitive-:Ge*
 fugitive-:Gedit	fugitive.txt	/*fugitive-:Gedit*
+fugitive-:Gfetch	fugitive.txt	/*fugitive-:Gfetch*
 fugitive-:Ggrep	fugitive.txt	/*fugitive-:Ggrep*
 fugitive-:Git	fugitive.txt	/*fugitive-:Git*
 fugitive-:Git!	fugitive.txt	/*fugitive-:Git!*
@@ -322,9 +324,12 @@ fugitive-:Glcd	fugitive.txt	/*fugitive-:Glcd*
 fugitive-:Glgrep	fugitive.txt	/*fugitive-:Glgrep*
 fugitive-:Gllog	fugitive.txt	/*fugitive-:Gllog*
 fugitive-:Glog	fugitive.txt	/*fugitive-:Glog*
+fugitive-:Gmerge	fugitive.txt	/*fugitive-:Gmerge*
 fugitive-:Gmove	fugitive.txt	/*fugitive-:Gmove*
 fugitive-:Gpedit	fugitive.txt	/*fugitive-:Gpedit*
 fugitive-:Gpedit!	fugitive.txt	/*fugitive-:Gpedit!*
+fugitive-:Gpull	fugitive.txt	/*fugitive-:Gpull*
+fugitive-:Gpush	fugitive.txt	/*fugitive-:Gpush*
 fugitive-:Gread	fugitive.txt	/*fugitive-:Gread*
 fugitive-:Gread!	fugitive.txt	/*fugitive-:Gread!*
 fugitive-:Gremove	fugitive.txt	/*fugitive-:Gremove*
